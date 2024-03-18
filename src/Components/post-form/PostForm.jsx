@@ -75,8 +75,8 @@ function PostForm({post}) {
 
     return (
    
-        <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
-        <div className="w-2/3 px-2">
+        <form onSubmit={handleSubmit(submit)} className="flex flex-wrap sm:justify-between ">
+        <div className=" w-full md:w-2/3 p-3 ">
             <Input
                 label="Title :"
                 placeholder="Title"
@@ -94,11 +94,11 @@ function PostForm({post}) {
             />
             <RTE label="Content :" name="content" control={control} defaultValue={getValues("content")} />
         </div>
-        <div className="w-1/3 px-2">
+        <div className="w-full  md:w-1/3  p-3">
             <Input
                 label="Featured Image :"
                 type="file"
-                className="mb-4"
+                className="py-1"
                 accept="image/png, image/jpg, image/jpeg, image/gif"
                 {...register("image", { required: !post })}
             />
@@ -107,17 +107,22 @@ function PostForm({post}) {
                     <img
                         src={appwriteService.getFilePreview(post.featuredImage)}
                         alt={post.title}
-                        className="rounded-lg"
+                        className="rounded-lg "
                     />
                 </div>
             )}
+            {/* <label htmlFor="status" className='text-xl font-bold'>Status</label> */}
             <Select
                 options={["active", "inactive"]}
+                
                 label="Status"
-                className="mb-4"
+                className=" "
+                
                 {...register("status", { required: true })}
             />
-            <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full">
+            <p className='text-xs text-gray-500 p-1 mb-4'>note: select active to update data</p>
+            
+            <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full ">
                 {post ? "Update" : "Submit"}
             </Button>
         </div>

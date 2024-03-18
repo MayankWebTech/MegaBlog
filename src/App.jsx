@@ -24,17 +24,19 @@ useEffect(() => {
 },[])
 
   return  !loading ? (
-    <div className="min-h-screen max-w-screen flex flex-wrap content-between bg-gray-400">
-    <div className="w-full block">
+    <div className="flex flex-col min-h-screen bg-lightGreen">
+
       <Header />
-      <main>
+      <main className="flex-grow">
         <Outlet />
       </main>
       <Footer />
     </div>
-    </div>
   
-  ) : null
+  
+  ) : ( 
+    <div>Sorry! The page could not load...Please try again later! </div>
+   )
 }
 
 export default App
