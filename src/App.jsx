@@ -24,7 +24,7 @@ useEffect(() => {
 },[])
 
   return  !loading ? (
-    <div className="flex flex-col min-h-screen bg-lightGreen">
+    <div className="flex flex-col min-h-screen bg-lightGreen overflow-hidden">
 
       <Header />
       <main className="flex-grow">

@@ -6,10 +6,11 @@ import { Controller } from 'react-hook-form';
 function RTE({name, control, label, defaultValue=""}) {
   return (
     <div className='w-full '>
-      {label && <label className='inline-block my-4  px-2 text-xl  font-extrabold hover:text-blue-800' >{label}</label>}
+      {label && <label className='inline-block my-4  px-2 text-xl  text-customBlue font-extrabold hover:text-blue-800' >{label}</label>}
 
       <Controller 
       name = {name || "content"}
+      
       control= { control }
       render={({field: {onChange}})=>(
         <Editor

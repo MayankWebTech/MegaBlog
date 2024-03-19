@@ -33,32 +33,35 @@ export default function Post() {
     });
 };
 return post ? (
-    <div className="py-8">
+    <div className=" py-8 bg-customWhite  h-auto">
         <Container>
-            <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
+            <div className="w-full flex justify-center  relative border-opacity-40  rounded-xl mt-4">
+                <div className='h-90 max-h-90 overflow-hidden'>
                 <img
                     src={appwriteService.getFilePreview(post.featuredImage)}
                     alt={post.title}
-                    className="rounded-xl"
+                    className="rounded-xl  w-auto h-auto object-cover "
                 />
+                </div>
+                
 
                 {isAuthor && (
-                    <div className="absolute right-6 top-6">
+                    <div className="absolute right-3 top-3 max-w-13 ">
                         <Link to={`/edit-post/${post.$id}`}>
-                            <Button bgColor="bg-green-500" className="mr-3">
+                            <Button bgColor="bg-green-500 active:text-green-500 active:bg-customWhite" className="mr-3 opacity-80 hover:opacity-100 ">
                                 Edit
                             </Button>
                         </Link>
-                        <Button bgColor="bg-red-500" onClick={deletePost}>
+                        <Button bgColor="bg-red-400 active:text-red-500 active:bg-customWhite   opacity-80 hover:opacity-100 " onClick={deletePost}>
                             Delete
                         </Button>
                     </div>
                 )}
             </div>
-            <div className="w-full mb-6">
-                <h1 className="text-2xl font-bold">{post.title}</h1>
+            <div className="w-full mb-3">
+                <h1 className="text-5xl font-extrabold text-customBlue p-2 h-auto ">{post.title}</h1>
             </div>
-            <div className="browser-css">
+            <div className="bg-green-100 text-gray-900 text-left l rounded-xl py-4 px-5 text-lg h-auto w-full break-words ">
                 {parse(post.content)}
                 </div>
         </Container>

@@ -78,13 +78,13 @@ function PostForm({post}) {
         <form onSubmit={handleSubmit(submit)} className="flex flex-wrap sm:justify-between ">
         <div className=" w-full md:w-2/3 p-3 ">
             <Input
-                label="Title :"
+                label="Add  Title"
                 placeholder="Title"
-                className="mb-4"
+                className="mb-4 "
                 {...register("title", { required: true })}
             />
             <Input
-                label="Slug :"
+                label="Generated-Slug"
                 placeholder="Slug"
                 className="mb-4"
                 {...register("slug", { required: true })}
@@ -92,26 +92,26 @@ function PostForm({post}) {
                     setValue("slug", slugTransform(e.currentTarget.value), { shouldValidate: true });
                 }}
             />
-            <RTE label="Content :" name="content" control={control} defaultValue={getValues("content")} />
+            <RTE label="Add Content " name="content" control={control} defaultValue={getValues("content")} />
         </div>
         <div className="w-full  md:w-1/3  p-3">
             <Input
-                label="Featured Image :"
+                label="Featured Image"
                 type="file"
-                className="py-1"
+                className="py-1 "
                 accept="image/png, image/jpg, image/jpeg, image/gif"
                 {...register("image", { required: !post })}
             />
             {post && (
-                <div className="w-full mb-4">
+                <div className="mb-4 h-70  overflow-hidden w-full flex justify-around items-center">
                     <img
                         src={appwriteService.getFilePreview(post.featuredImage)}
                         alt={post.title}
-                        className="rounded-lg "
+                        className="object-cover w-full h-60 rounded-lg shadow-xl "
                     />
                 </div>
             )}
-            {/* <label htmlFor="status" className='text-xl font-bold'>Status</label> */}
+            
             <Select
                 options={["active", "inactive"]}
                 
@@ -122,7 +122,7 @@ function PostForm({post}) {
             />
             <p className='text-xs text-gray-500 p-1 mb-4'>note: select active to update data</p>
             
-            <Button type="submit" bgColor={post ? "bg-green-500" : undefined} className="w-full ">
+            <Button type="submit" bgColor={post ? "bg-green-500 " : undefined} className="w-full  ">
                 {post ? "Update" : "Submit"}
             </Button>
         </div>

@@ -28,15 +28,15 @@ function Signup() {
         }
      }
   return (
-    <div className="flex items-center justify-center">
-        <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
-            <div className="mb-2 flex justify-center">
+    <div className="flex items-center justify-center ">
+        <div className={`mx-auto w-full max-w-lg bg-customGreen hover:bg-opacity-100 bg-opacity-70 rounded-xl p-10 border border-black/10`}>
+            <div className="mb1 flex justify-center">
                     <span className="inline-block w-full max-w-[100px]">
                         <Logo width="100%" />
                     </span>
             </div>
             <h2 className="text-center text-2xl font-bold leading-tight">Sign up to create account</h2>
-                <p className="mt-2 text-center text-base text-black/60">
+                <p className="mt-2 mb-4 text-center text-base text-black/60">
                     Already have an account?&nbsp;
                     <Link
                         to="/login"
@@ -82,12 +82,13 @@ function Signup() {
                         <Input 
                         label="Password: " 
                         type="password" 
+                        className="mb-4"
                         placeholder='Enter your password'
                         {...register("password",{
                             required: true
                         })}
                         />
-                        <Button type='submit' className="w-full" >Create Account</Button>
+                        <Button type='submit' className="w-full active:bg-customWhite active:text-customBlue active:text-lg ">Create Account</Button>
                     </div>
                 </form>
                 </div>
