@@ -35,7 +35,7 @@ useEffect(() => {
   
   
   ) : ( 
-    <div>Sorry! The page could not load...Please try again later! </div>
+    <div className='flex justify-center items-center text-customWhite text-2xl bg-lightGreen  w-full h-full'>please wait! The page is loading content... </div>
    )
 }
 

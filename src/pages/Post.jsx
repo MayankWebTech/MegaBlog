@@ -35,12 +35,12 @@ export default function Post() {
 return post ? (
     <div className=" py-8 bg-customWhite  h-auto">
         <Container>
-            <div className="w-full flex justify-center  relative border-opacity-40  rounded-xl mt-4">
+            <div className="w-full flex justify-center  relative border-opacity-40 bg-lightGreen bg-opacity-40  rounded-xl mt-4">
                 <div className='h-90 max-h-90 overflow-hidden'>
                 <img
                     src={appwriteService.getFilePreview(post.featuredImage)}
                     alt={post.title}
-                    className="rounded-xl  w-auto h-auto object-cover "
+                    className="rounded-xl  w-auto h-auto object-contain border-lightGreen border-4 border-opacity-30  "
                 />
                 </div>
                 
@@ -59,9 +59,9 @@ return post ? (
                 )}
             </div>
             <div className="w-full mb-3">
-                <h1 className="text-5xl font-extrabold text-customBlue p-2 h-auto ">{post.title}</h1>
+                <h1 className="text-3xl sm:text-5xl font-extrabold text-customBlue p-2 h-auto  ">{post.title}</h1>
             </div>
-            <div className="bg-green-100 text-gray-900 text-left l rounded-xl py-4 px-5 text-lg h-auto w-full break-words ">
+            <div className="bg-green-100 text-gray-900 text-left l rounded-xl py-4 px-5 text-lg h-auto w-full break-words hover:shadow-inner">
                 {parse(post.content)}
                 </div>
         </Container>

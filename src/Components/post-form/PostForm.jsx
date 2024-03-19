@@ -14,7 +14,8 @@ function PostForm({post}) {
         title: post?.title || '',
         slug: post?.$id || '',
         content: post?.content || '',
-        status: post?.status || 'active'
+        status: post?.status || 'active',
+        image: post?.featuredImage ? [appwriteService.getFilePreview(post.featuredImage)] : [],
     }
  });
 
@@ -23,6 +24,7 @@ function PostForm({post}) {
     
     const submit = async (data) => {
         if(post) {
+            
             const file = data.image[0] ?  await appwriteService.uploadFile(data.image[0]) : null ;
 
             if (file){
@@ -99,7 +101,7 @@ function PostForm({post}) {
                 label="Featured Image"
                 type="file"
                 className="py-1 "
-                accept="image/png, image/jpg, image/jpeg, image/gif"
+                accept="image/*"
                 {...register("image", { required: !post })}
             />
             {post && (

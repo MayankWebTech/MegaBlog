@@ -15,8 +15,8 @@ constructor() {
 
 async createPost({title, slug, content, featuredImage, status, userId}){
     try {
-        return await this?.databases?.createDocument(conf?.appwriteDatabaseId,
-            conf?.appwriteCollectionId,
+        return await this.databases.createDocument(conf.appwriteDatabaseId,
+            conf.appwriteCollectionId,
             slug,
             {
                 title, content, featuredImage, status, userId,
@@ -30,7 +30,7 @@ async createPost({title, slug, content, featuredImage, status, userId}){
 
 async updatePost(slug, {title, content, featuredImage, status}){
     try {
-        return await this?.databases?.updateDocument(conf?.appwriteDatabaseId, conf?.appwriteCollectionId, slug,{
+        return await this.databases.updateDocument(conf.appwriteDatabaseId, conf.appwriteCollectionId, slug,{
             title, content, featuredImage, status
         })
         
@@ -55,9 +55,9 @@ async deletePost(slug){
 }
 async getPost(slug){
     try {
-       return await this?.databases?.getDocument(
-            conf?.appwriteDatabaseId,
-            conf?.appwriteCollectionId,
+       return await this.databases.getDocument(
+            conf.appwriteDatabaseId,
+            conf.appwriteCollectionId,
             slug
         )
         
@@ -68,9 +68,9 @@ async getPost(slug){
 
 async getPosts(queries = [Query.equal("status", "active")]) {
     try {
-        return await this?.databases?.listDocuments(
-            conf?.appwriteDatabaseId,
-            conf?.appwriteCollectionId,
+        return await this.databases.listDocuments(
+            conf.appwriteDatabaseId,
+            conf.appwriteCollectionId,
             queries,
         )
         
@@ -84,8 +84,8 @@ async getPosts(queries = [Query.equal("status", "active")]) {
   async uploadFile(file){
 
     try {
-       return await this?.bucket?.createFile(
-        conf?.appwriteBucketId,
+       return await this.bucket.createFile(
+        conf.appwriteBucketId,
         ID.unique(),
         file
        )

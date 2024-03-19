@@ -53,7 +53,7 @@ const onClickHandler =(item) => {
 
 const toggleMenu =() => {
   setIsMenuOpen(!isMenuOpen);
-  console.log('toggleMenu')
+  
 };
 
 
@@ -73,13 +73,13 @@ const toggleMenu =() => {
             {navItems.map((item) => item.active ?(
               <li key={item.name}>
                 <button onClick={() => onClickHandler(item)}
-                className={` font-extrabold text-xl  mt-5 mx-6 my-2 transform hover:scale-110 transition-all duration-500 ease-in-out hover:text-customWhite  ${activeButtonName === item.name ? "text-customWhite" : "text-customBlue"} `}
+                className={` font-extrabold text-2xl  mt-5 lg:mx-7 mx-3  my-2 transform hover:scale-110 transition-all duration-500 ease-in-out hover:text-customWhite  ${activeButtonName === item.name ? "text-customWhite" : "text-customBlue"} `}
                 >{item.name}</button>
               </li>
             ) : null)}
             {authStatus &&  (
               <li className='mt-5'>
-                <LogoutBtn />
+                <LogoutBtn  />
               </li>
             )}
             
@@ -94,7 +94,7 @@ const toggleMenu =() => {
             className='absolute top-14 right-16 w-10 text-customBlue text-xl font-bold cursor-pointer '/>
              
              <div className=''>
-          <ul className={` rounded-lg flex absolute top-20 right-1 bg-lightGreen flex-col w-40 py-2  border-2 border-darkGreen border-opacity-10 animate-mobileMenu shadow-lg cursor-pointer `} >
+          <ul className={`bg-opacity-60  rounded-lg flex absolute top-20 right-1 bg-lightGreen flex-col w-40 py-2  border-2 border-customWhite border-opacity-50 animate-mobileMenu shadow-lg cursor-pointer `} >
             {navItems.map((item) => item.active ? (
               <li key={item.name}>
                 <button onClick={() => onClickHandler(item)}
