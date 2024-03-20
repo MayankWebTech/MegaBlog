@@ -22,14 +22,8 @@ function Home() {
             return(
                 <div className='w-full h-auto py-8 mt-4 text-center'>
                     <Container>
-                        <div className='flex flex-wrap'>
-                            <div className='p-2 w-full '>
-                                <h1 className="text-2xl font-bold text-customBlue hover:text-customWhite sm:font-extrabold ">Welcome to blog Insights .<br/>
-                                Let's create Blog here<br/><br/>
-                                just click 🖱️ " Add Post " </h1>
-                                
-                                
-                            </div>
+                        <div className='w-full min-h-60 flex justify-center items-center'>
+                                <h1 className="text-2xl sm:text-4xl font-bold text-customBlue hover:text-customWhite sm:font-extrabold ">Welcome🤗 to "BLOG INSIGHTS" </h1>
                         </div>
                     </Container>
                 </div>
@@ -38,11 +32,9 @@ function Home() {
        return(
         <div className='w-full py-8 mt-4 text-center'>
             <Container>
-                <div className='flex flex-wrap'>
-                    <div className='p-2 w-full -60'>
-                        <h1 className="text-2xl font-bold text-customBlue hover:text-customWhite sm:font-extrabold ">Please Login to read or add blogs...</h1>
-                    </div>
-                </div>
+            <div className='w-full min-h-60 flex justify-center items-center'>
+                                <h1 className="text-2xl sm:text-4xl font-bold text-customBlue hover:text-customWhite sm:font-extrabold ">Do Login to Read or Add Blogs</h1>
+                        </div>
             </Container>
         </div>
        )

@@ -33,35 +33,40 @@ export default function Post() {
     });
 };
 return post ? (
-    <div className=" py-8 bg-customWhite  h-auto">
+    <div className=" pb-8  bg-green-100  h-auto">
         <Container>
-            <div className="w-full flex justify-center  relative border-opacity-40 bg-lightGreen bg-opacity-40  rounded-xl mt-4">
-                <div className='h-90 max-h-90 overflow-hidden'>
+
+      
+            <div className="w-full flex justify-center  relative  bg-green-100 bg-opacity-40  ">
+                <div className='h-90 max-h-90 overflow-hidden rounded-2xl mt-4  '>
                 <img
                     src={appwriteService.getFilePreview(post.featuredImage)}
                     alt={post.title}
-                    className="rounded-xl  w-auto h-auto object-contain border-lightGreen border-4 border-opacity-30  "
+                    className=" w-auto h-auto max-h-full max-w-full object-fill "
+                    style={{ aspectRatio: "18/9" }}
                 />
                 </div>
                 
 
                 {isAuthor && (
-                    <div className="absolute right-3 top-3 max-w-13 ">
+                    <div className="absolute right-2 top-5 max-w-13  ">
                         <Link to={`/edit-post/${post.$id}`}>
                             <Button bgColor="bg-green-500 active:text-green-500 active:bg-customWhite" className="mr-3 opacity-80 hover:opacity-100 ">
                                 Edit
                             </Button>
                         </Link>
-                        <Button bgColor="bg-red-400 active:text-red-500 active:bg-customWhite   opacity-80 hover:opacity-100 " onClick={deletePost}>
+                        <Button bgColor="bg-red-400 active:text-red-500 active:bg-customWhite opacity-80 hover:opacity-100 " onClick={deletePost}>
                             Delete
                         </Button>
                     </div>
                 )}
             </div>
-            <div className="w-full mb-3">
-                <h1 className="text-3xl sm:text-5xl font-extrabold text-customBlue p-2 h-auto  ">{post.title}</h1>
+
+            <div className="w-full mb-4  bg-green-100">
+                <h1 className="text-3xl mt-2 sm:text3xl font-extrabold text-customBlue p-2 h-auto ">{post.title}</h1>
             </div>
-            <div className="bg-green-100 text-gray-900 text-left l rounded-xl py-4 px-5 text-lg h-auto w-full break-words hover:shadow-inner">
+            
+            <div className="bg-green-100  text-black text-left  font-semibold px-5 text-md h-auto min-h-40 w-full break-words leading-tight  ">
                 {parse(post.content)}
                 </div>
         </Container>
