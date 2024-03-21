@@ -42,8 +42,8 @@ return post ? (
                 <img
                     src={appwriteService.getFilePreview(post.featuredImage)}
                     alt={post.title}
-                    className="object-cover rounded-xl w-auto "
-                    style={{ width:"full" , height: "450px" }}
+                    className="object-contain rounded-xl w-auto "
+                    style={{ width:"auto" , height: "450px" }}
                 />
                 </div>
                 
